@@ -15,7 +15,9 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(data, "check");
+  const handleFilter = (e) => {
+    console.log(e.target, "wporkong");
+  };
 
   return (
     <>
@@ -26,7 +28,7 @@ function App() {
               <input type="checkbox" />
             </th>
             <th>
-              Id <span id="triangleDown"></span>
+              Id <button onClick={handleFilter}>^</button>
             </th>
             <th>Title</th>
             <th>Description</th>
@@ -37,6 +39,7 @@ function App() {
             <th>Discount</th>
             <th>Stock</th>
             <th>Thumbnail</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -58,6 +61,7 @@ function App() {
                 <td>
                   <img src={val.thumbnail} height={40} width={50} />
                 </td>
+                <td>Edit, Delete</td>
               </tr>
             ))}
         </tbody>
